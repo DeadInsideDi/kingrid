@@ -5,6 +5,8 @@ export const createBaseClient = (config?: CreateAxiosDefaults) => {
 		baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
 		headers: {
 			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Credentials': true,
 		},
 		withCredentials: true,
 		...config,
