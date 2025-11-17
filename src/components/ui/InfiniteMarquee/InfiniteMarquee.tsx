@@ -4,11 +4,11 @@ import { type FC } from 'react'
 import s from './InfiniteMarquee.module.scss'
 import {
 	InfiniteMarqueeItem,
-	type InfiniteMarqueeItemProps,
+	type InfiniteMarqueeItemType,
 } from './InfiniteMarqueeItem/InfiniteMarqueeItem'
 
 export type InfiniteMarqueeProps = {
-	items: Omit<InfiniteMarqueeItemProps, 'ariaHidden'>[]
+	items: InfiniteMarqueeItemType[]
 }
 
 export const InfiniteMarquee: FC<InfiniteMarqueeProps> = ({ items }) => {

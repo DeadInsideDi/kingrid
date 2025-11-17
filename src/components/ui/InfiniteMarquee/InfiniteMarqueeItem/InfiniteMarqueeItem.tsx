@@ -4,9 +4,12 @@ import Image from 'next/image'
 import { type FC } from 'react'
 import s from './InfiniteMarqueeItem.module.scss'
 
-export type InfiniteMarqueeItemProps = {
+export type InfiniteMarqueeItemType = {
 	image: string
 	name: string
+}
+
+export type InfiniteMarqueeItemProps = InfiniteMarqueeItemType & {
 	ariaHidden: boolean
 }
 
