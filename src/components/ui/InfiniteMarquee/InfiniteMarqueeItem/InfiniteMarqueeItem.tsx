@@ -7,13 +7,13 @@ import s from './InfiniteMarqueeItem.module.scss'
 export type InfiniteMarqueeItemProps = {
 	image: string
 	name: string
-	'aria-hidden': boolean
+	ariaHidden: boolean
 }
 
 export const InfiniteMarqueeItem: FC<InfiniteMarqueeItemProps> = ({
 	image,
 	name,
-	'aria-hidden': ariaHidden,
+	ariaHidden,
 }) => {
 	return (
 		<div

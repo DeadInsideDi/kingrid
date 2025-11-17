@@ -8,7 +8,7 @@ import {
 } from './InfiniteMarqueeItem/InfiniteMarqueeItem'
 
 export type InfiniteMarqueeProps = {
-	items: Omit<InfiniteMarqueeItemProps, 'aria-hidden'>[]
+	items: Omit<InfiniteMarqueeItemProps, 'ariaHidden'>[]
 }
 
 export const InfiniteMarquee: FC<InfiniteMarqueeProps> = ({ items }) => {
@@ -21,7 +21,7 @@ export const InfiniteMarquee: FC<InfiniteMarqueeProps> = ({ items }) => {
 				{duplicated3Items.map((item, index) => (
 					<InfiniteMarqueeItem
 						key={index}
-						aria-hidden={index > itemsCount}
+						ariaHidden={index > itemsCount}
 						{...item}
 					/>
 				))}
