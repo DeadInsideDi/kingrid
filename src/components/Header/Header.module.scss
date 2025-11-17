@@ -52,7 +52,7 @@ $header-blur: blur(5px);
 .logo {
 	display: flex;
 	height: 2.5rem;
-	width: 4rem;
+	width: 6rem;
 	transition: opacity 0.2s ease;
 
 	@include screen-xs {
