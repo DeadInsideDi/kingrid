@@ -12,21 +12,19 @@ export type InfiniteMarqueeProps = {
 }
 
 export const InfiniteMarquee: FC<InfiniteMarqueeProps> = ({ items }) => {
-	const children = items.map((item, index) => (
-		<InfiniteMarqueeItem
-			key={index}
-			{...item}
-		/>
-	))
+	const itemsCount = items.length
+	const duplicated3Items = items.concat(items).concat(items)
 
 	return (
 		<div className={s['infinite-marquee']}>
-			<div className={s.group}>{children}</div>
-			<div
-				className={s.group}
-				aria-hidden
-			>
-				{children}
+			<div className={s.group}>
+				{duplicated3Items.map((item, index) => (
+					<InfiniteMarqueeItem
+						{...item}
+						key={index}
+						aria-hidden={index > itemsCount}
+					/>
+				))}
 			</div>
 		</div>
 	)

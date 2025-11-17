@@ -1,7 +1,7 @@
 .infinite-marquee {
 	margin-top: 4rem;
 	display: flex;
-	width: fit-content;
+	overflow: hidden;
 }
 
 .group {
@@ -12,6 +12,6 @@
 
 @keyframes spin {
 	to {
-		transform: translateX(-100%);
+		transform: translateX(-33.33%);
 	}
 }

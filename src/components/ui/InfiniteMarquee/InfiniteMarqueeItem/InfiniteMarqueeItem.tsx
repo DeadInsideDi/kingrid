@@ -7,14 +7,19 @@ import s from './InfiniteMarqueeItem.module.scss'
 export type InfiniteMarqueeItemProps = {
 	image: string
 	name: string
+	'aria-hidden': boolean
 }
 
 export const InfiniteMarqueeItem: FC<InfiniteMarqueeItemProps> = ({
 	image,
 	name,
+	'aria-hidden': ariaHidden,
 }) => {
 	return (
-		<div className={s['infinite-marquee-item']}>
+		<div
+			className={s['infinite-marquee-item']}
+			aria-hidden={ariaHidden}
+		>
 			<Image
 				src={image}
 				alt={name}
