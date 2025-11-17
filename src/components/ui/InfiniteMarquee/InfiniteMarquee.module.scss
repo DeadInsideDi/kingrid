@@ -15,9 +15,9 @@
 
 @keyframes spin {
 	from {
-		transform: translateX(-33.33%);
+		transform: translateX(0);
 	}
 	to {
-		transform: translateX(-66.66%);
+		transform: translateX(-33.33%);
 	}
 }
