@@ -1,0 +1,68 @@
+@use '../../../../styles/mixins' as *;
+
+.user-buttons {
+	display: flex;
+	gap: 0.5rem;
+	img {
+		border-radius: 50%;
+	}
+}
+
+nav:has(> .user-avatar-button) {
+	@include dropdown-container;
+}
+
+.user-text-avatar {
+	aspect-ratio: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--splitting-border-color);
+	border-radius: 50%;
+}
+
+.user-avatar-button {
+	@include dropdown-button;
+	@include focus-visible-outline {
+		border: none;
+	}
+	.user-text-avatar {
+		height: 100%;
+	}
+
+	+ div {
+		@include dropdown-content(15rem, 6rem);
+		padding: 0.5rem;
+		gap: 0.5rem;
+
+		> hr {
+			border: none;
+			border-bottom: 1px solid var(--splitting-border-color);
+		}
+
+		> .user-menu-header {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.5rem;
+			font-size: 0.75rem;
+			font-weight: 600;
+			> img,
+			> .user-text-avatar {
+				transition: none;
+				height: 3rem;
+				font-size: 2em;
+			}
+		}
+
+		> ol a {
+			color: inherit;
+			display: flex;
+			padding: 0.5rem;
+			border-radius: 0.5rem;
+			&:hover {
+				background-color: var(--bg-color-active);
+			}
+		}
+	}
+}

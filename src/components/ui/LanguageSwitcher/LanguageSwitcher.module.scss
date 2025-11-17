@@ -1,0 +1,34 @@
+@use '../../../styles/mixins' as *;
+
+.language-switcher {
+	@include unselectable;
+	@include dropdown-container;
+
+	> button {
+		@include dropdown-button;
+	}
+	> ol {
+		@include dropdown-content;
+
+		> li {
+			width: 100%;
+
+			> button {
+				aspect-ratio: unset;
+				justify-content: space-between;
+				width: inherit;
+				background-color: inherit;
+				padding: 0.5rem;
+				border-radius: 0.75rem;
+
+				> svg {
+					width: 1rem;
+					height: 1rem;
+				}
+				&:hover {
+					background-color: var(--bg-color-active);
+				}
+			}
+		}
+	}
+}

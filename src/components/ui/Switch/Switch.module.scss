@@ -1,0 +1,68 @@
+@use '../../../styles/mixins' as *;
+
+.switch {
+	@include unselectable;
+	position: relative;
+	width: 4rem;
+	height: 2rem;
+
+	> label {
+		position: absolute;
+		inset: 0;
+		border-radius: 2rem;
+		background-color: var(--bg-color-active);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		padding: 0.25rem;
+
+		&:after {
+			content: '';
+			transition: inherit;
+			width: 1.5rem;
+			height: 1.5rem;
+			border-radius: 50%;
+			background-color: var(--white);
+		}
+		@include desktop {
+			&:hover {
+				background-color: var(--off-bg-color);
+			}
+		}
+		@include mobile {
+			&:active {
+				background-color: var(--off-bg-color);
+			}
+		}
+	}
+
+	> input[type='checkbox'] {
+		appearance: none;
+		@include focus-visible-outline {
+			& + label {
+				transition: outline 0s;
+				outline: 2px solid var(--primary-color);
+			}
+		}
+
+		&:checked + label {
+			background-color: var(--primary-color);
+
+			@include desktop {
+				&:hover {
+					background-color: var(--primary-color-hover);
+				}
+			}
+			@include mobile {
+				&:active {
+					background-color: var(--primary-color-hover);
+				}
+			}
+
+			&:after {
+				transform: translateX(2rem);
+			}
+		}
+	}
+}

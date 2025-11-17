@@ -1,0 +1,39 @@
+.flow-controls {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	display: flex;
+	gap: 0.5rem;
+
+	> * {
+		height: 2rem;
+		background-color: var(--off-bg-color);
+		border-radius: 0.5rem;
+		box-shadow: 0 0 0 3px var(--splitting-border-color);
+	}
+
+	button {
+		display: flex;
+		justify-content: center;
+		aspect-ratio: 1;
+	}
+}
+
+.flow-scale-control {
+	display: flex;
+
+	> button {
+		border-radius: 0.5rem;
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+	> input {
+		width: 6ch;
+		text-align: center;
+		border: none;
+		font-size: 1.25rem;
+	}
+}

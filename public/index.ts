@@ -1,0 +1,5 @@
+export { default as Facebook } from './facebook.svg'
+export { default as Github } from './github.svg'
+export { default as Instagram } from './instagram.svg'
+export { default as Logo } from './logo.svg'
+export { default as X } from './x.svg'

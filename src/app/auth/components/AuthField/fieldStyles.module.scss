@@ -1,0 +1,81 @@
+@use '../../../../styles/mixins' as *;
+
+.input-field {
+	--input-primary-color: var(--off-fg-color);
+	--input-secondary-color: var(--grey-600);
+	width: 100%;
+	position: relative;
+	transition: 0.15s ease-out;
+
+	&:has(*:focus, input:valid) {
+		--input-primary-color: var(--primary-color);
+		--input-secondary-color: var(--primary-color);
+		> label {
+			transform: translateY(-100%) scale(0.75);
+		}
+	}
+
+	&:has(input[aria-invalid='true']) {
+		--input-primary-color: var(--red-500);
+		--input-secondary-color: var(--red-500);
+	}
+
+	> input {
+		transition: inherit;
+		background-color: var(--off-bg-color);
+		border: solid 2px var(--input-primary-color);
+		border-radius: 1rem;
+	}
+
+	> label,
+	> svg {
+		position: absolute;
+		color: var(--input-secondary-color);
+		transition: inherit;
+		pointer-events: none;
+		align-self: center;
+	}
+
+	> label {
+		transform-origin: left;
+		height: 50%;
+		font-size: 0.7em;
+		left: var(--input-padding-left);
+		align-content: center;
+		white-space: nowrap;
+		background-color: var(--off-bg-color);
+		padding-inline: 0.2rem;
+	}
+
+	> svg {
+		left: 1rem;
+		animation: fade-in 0.1s ease-out forwards;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+.password-field {
+	> button {
+		position: absolute;
+		inset: 0.5rem 0.5rem 0.5rem auto;
+		border-radius: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 1;
+
+		> svg {
+			width: 1.5rem;
+		}
+
+		&:hover {
+			background-color: var(--bg-widget-color);
+		}
+	}
+}

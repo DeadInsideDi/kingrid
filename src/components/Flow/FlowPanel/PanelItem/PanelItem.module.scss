@@ -1,0 +1,9 @@
+.panel-item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5vh;
+	height: 100%;
+	> span {
+		font-size: 0.9em;
+	}
+}

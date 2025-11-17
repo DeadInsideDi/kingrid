@@ -1,0 +1,42 @@
+.pricing-card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--bg-widget-color);
+
+	border-radius: 1rem;
+	padding: 2rem 2rem 1rem 2rem;
+
+	> h3 {
+		font-size: 1.6rem;
+	}
+	> .price {
+		font-size: 4rem;
+	}
+	> ul {
+		width: 100%;
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+		background-color: var(--bg-color-active);
+
+		> li {
+			background-color: var(--bg-widget-color);
+			display: flex;
+			gap: 1rem;
+			padding: 1rem 0;
+		}
+	}
+}
+
+.primary-card {
+	background-color: var(--primary-color);
+	color: var(--white);
+	> ul {
+		background-color: var(--white);
+		> li {
+			background-color: var(--primary-color);
+		}
+	}
+}

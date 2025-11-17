@@ -1,0 +1,138 @@
+@use '../../styles/mixins' as *;
+
+$header-opacity: 0.9;
+$header-blur: blur(5px);
+
+.header {
+	height: var(--header-height);
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	background-color: rgb(from var(--off-bg-color) r g b / $header-opacity);
+	backdrop-filter: $header-blur;
+	z-index: 99;
+	border-bottom: 1px solid transparent;
+	animation: slide-down 0.75s ease-out forwards;
+
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.2rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+
+		@include desktop {
+			&:hover {
+				background-color: var(--bg-color-hover);
+			}
+		}
+		&:active {
+			background-color: var(--bg-color-active);
+		}
+	}
+}
+
+@keyframes slide-down {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0.6;
+	}
+	90% {
+		transform: translateY(0);
+		opacity: 1;
+		border-bottom-color: transparent;
+	}
+	100% {
+		border-bottom-color: var(--splitting-border-color);
+	}
+}
+
+.logo {
+	display: flex;
+	height: 2.5rem;
+	width: 4rem;
+	transition: opacity 0.2s ease;
+
+	@include screen-xs {
+		display: none;
+	}
+
+	@include desktop {
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+.navigation {
+	@include centered-container;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+
+	> ol {
+		margin-right: auto;
+		font-size: 0.9rem;
+
+		@include screen-md-less {
+			display: none;
+		}
+	}
+}
+
+.app-actions {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+}
+
+.mobile-menu {
+	display: none;
+	position: fixed;
+	width: 100%;
+	background-color: rgb(from var(--bg-color) r g b / $header-opacity);
+	backdrop-filter: $header-blur;
+	border-radius: 0 0 1rem 1rem;
+	z-index: 1;
+
+	@include screen-md-less {
+		display: unset;
+	}
+
+	> ol {
+		flex-direction: column;
+		align-items: start;
+		gap: 0;
+
+		> li {
+			width: 100%;
+			transform: translateX(-25%);
+			opacity: 0;
+			animation: slide-right 0.2s var(--comic-bezier) forwards;
+
+			@for $i from 1 through 5 {
+				&:nth-child(#{$i}) {
+					animation-delay: 0.05s * $i;
+				}
+			}
+
+			> a {
+				display: inline-block;
+				width: inherit;
+				padding: 1rem;
+			}
+		}
+	}
+}
+
+@keyframes slide-right {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

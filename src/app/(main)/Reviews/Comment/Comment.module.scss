@@ -1,0 +1,48 @@
+@use '../../../../styles/mixins' as *;
+
+.comment {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	border-radius: 1rem;
+	padding: 2rem;
+	width: 100%;
+	background-color: var(--bg-widget-color);
+}
+
+.user-info {
+	display: grid;
+	grid-template-columns: 3rem 2ch 1fr 10ch;
+	grid-template-rows: 1.2rem 1rem 1rem;
+	font-size: clamp(0.7rem, 4vw, 1rem);
+
+	> img {
+		grid-row: span 3 / span 3;
+		width: 3rem;
+		border-radius: 50%;
+	}
+
+	@include screen-lg-less {
+		grid-template-rows: 1.2rem 0 1rem;
+	}
+	@include screen-xs {
+		grid-template-rows: 1.2rem 1rem 1rem;
+	}
+}
+
+.name {
+	grid-column-start: 3;
+}
+
+.occupation {
+	grid-area: 3 / 3 / 4 / 5;
+	font-size: 0.8em;
+	word-wrap: break-word;
+	color: var(--grey-500);
+}
+
+.date {
+	grid-column-start: 4;
+	color: var(--grey-500);
+	justify-self: end;
+}

@@ -1,0 +1,111 @@
+@use '../../styles/mixins' as *;
+
+.modal {
+	position: fixed;
+	bottom: 0;
+	left: 100%;
+
+	color: var(--off-fg-color);
+	background: linear-gradient(
+		135deg,
+		var(--bg-widget-color),
+		var(--black) 400%
+	);
+
+	outline: none;
+	border: none;
+	border-top-left-radius: 1rem;
+	width: 20rem;
+	max-width: 100%;
+	box-shadow: 0 0 2px 0 var(--splitting-border-color);
+	padding: 1rem;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		inset-inline: 1rem;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			var(--primary-color),
+			transparent
+		);
+	}
+
+	animation: slide-out 0.2s ease-in forwards;
+
+	&[open] {
+		animation: slide-in 0.2s ease-out forwards;
+	}
+}
+
+@keyframes slide-out {
+	from {
+		display: block;
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes slide-in {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.close {
+	border: 1px solid var(--splitting-border-color);
+	border-radius: 0.5rem;
+
+	width: 2rem;
+	height: 2rem;
+
+	display: flex;
+	justify-content: center;
+}
+
+.header {
+	text-align: center;
+	margin-block: 0.5rem 1rem;
+
+	> h2 {
+		font-size: 1.2rem;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	> p {
+		color: var(--grey-600);
+		font-size: 0.9rem;
+	}
+}
+
+.form {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+
+	> * {
+		border-radius: 0.5rem;
+	}
+}
+
+.submit {
+	transition: all 0.3s ease;
+	position: relative;
+	width: 100%;
+	height: 3rem;
+	background-color: var(--primary-color);
+	border: none;
+	font-weight: 600;
+
+	@include desktop {
+		&:hover {
+			background-color: var(--primary-color-hover);
+		}
+	}
+	&:active {
+		background-color: var(--primary-color-active);
+	}
+}

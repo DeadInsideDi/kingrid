@@ -1,0 +1,40 @@
+@use '../../styles/mixins' as *;
+
+.container {
+	section {
+		@include centered-container;
+		margin-top: 6rem;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 2rem;
+
+		> h1,
+		> h2,
+		> p {
+			display: inline-block;
+			text-wrap: balance;
+			text-align: center;
+		}
+
+		> h1,
+		> h2 {
+			font-size: clamp(2rem, 6vw, 4rem);
+			max-width: 75vw;
+			line-height: 1.25;
+
+			background: linear-gradient(
+				180deg,
+				var(--off-fg-color) 80%,
+				var(--grey-600)
+			);
+			background-clip: text;
+			color: transparent;
+		}
+
+		> p {
+			font-size: clamp(1rem, 3vw, 2rem);
+			max-width: 80vw;
+		}
+	}
+}

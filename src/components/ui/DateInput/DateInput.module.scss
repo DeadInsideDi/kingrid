@@ -1,0 +1,12 @@
+.date-input {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+
+	> input {
+		width: 100%;
+		&:invalid {
+			border-color: var(--red-500) !important;
+		}
+	}
+}

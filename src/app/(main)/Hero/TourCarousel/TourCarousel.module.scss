@@ -1,0 +1,117 @@
+@use '../../../../styles/mixins' as *;
+
+.carousel-wrapper {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	width: 100%;
+	position: relative;
+	height: min(32rem, 75vh);
+
+	> fieldset {
+		display: none;
+		border: none;
+		position: absolute;
+		inset: 0;
+		align-items: center;
+		justify-content: space-between;
+		margin-inline: -0.5rem;
+		pointer-events: none;
+
+		@include screen-lg-less {
+			display: flex;
+		}
+
+		> button {
+			background-color: rgb(from var(--fg-color) r g b / 0.1);
+			border-radius: 50%;
+			height: 3rem;
+			aspect-ratio: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			pointer-events: all;
+
+			> svg {
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+
+			&:hover {
+				background-color: rgb(from var(--fg-color) r g b / 0.2);
+			}
+			&:active {
+				background-color: rgb(from var(--fg-color) r g b / 0.3);
+			}
+		}
+	}
+}
+
+.tour {
+	display: grid;
+	grid-template-rows: 2fr 0.5fr 2fr;
+	grid-template-columns: 1fr 1.2fr 1fr;
+	gap: 1rem;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 1rem;
+
+	@include screen-lg-less {
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+		display: flex;
+		overflow-x: scroll;
+	}
+
+	> li {
+		position: relative;
+		overflow: hidden;
+
+		transition: font-size 0.1s ease-in;
+		border: 2px solid var(--bg-widget-color);
+		background-size: cover;
+
+		border-radius: 1rem;
+		padding: 1.5rem 2rem;
+		font-size: 1.25rem;
+		align-content: end;
+
+		@include screen-lg-less {
+			width: 100%;
+			flex: 0 0 100%;
+			scroll-snap-align: center;
+			justify-content: space-between;
+			margin-top: 1px;
+			position: relative;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to bottom, transparent, black);
+			z-index: -1;
+		}
+	}
+}
+
+.getting-started {
+	grid-area: 1 / 1 / 3 / 2;
+}
+
+.adding-members {
+	grid-area: 3 / 1 / 4 / 2;
+}
+
+.adding-users {
+	grid-area: 1 / 2 / 4 / 3;
+}
+
+.customization {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.export-tree {
+	grid-area: 2 / 3 / 4 / 4;
+}

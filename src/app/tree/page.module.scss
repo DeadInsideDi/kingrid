@@ -1,0 +1,31 @@
+body:has(.tree-container) {
+	overflow: hidden;
+}
+.tree-container {
+	> svg {
+		width: 100vw;
+		height: 100vh;
+		user-select: none;
+		color: #7e7e7e;
+		cursor: grab;
+
+		g {
+			&[id='connections'] > circle {
+				r: 5px;
+				fill: transparent;
+				pointer-events: none;
+			}
+			> use {
+				transition:
+					stroke 0.5s var(--comic-bezier),
+					stroke-width 0.5s var(--comic-bezier);
+				stroke: transparent;
+				stroke-width: 0;
+				fill: var(--bg-widget-color);
+			}
+			> text {
+				fill: var(--fg-color);
+			}
+		}
+	}
+}

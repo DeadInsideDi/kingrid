@@ -1,0 +1,12 @@
+@use '../../../styles/mixins' as *;
+
+.pricing-cards {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+
+	@include screen-lg-less {
+		flex-wrap: wrap;
+	}
+}

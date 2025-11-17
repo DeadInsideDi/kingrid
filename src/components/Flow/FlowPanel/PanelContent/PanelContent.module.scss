@@ -1,0 +1,160 @@
+@use '../../../../styles/mixins' as *;
+
+.panel-content {
+	--thin-border: 1px solid var(--bg-widget-color);
+	display: flex;
+	flex-direction: column;
+	gap: 1vh;
+	height: 100%;
+
+	overflow: auto;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	input[type='text'],
+	textarea {
+		border: var(--thin-border);
+		border-radius: 1rem;
+		padding: 0.5vh 1rem;
+		&:hover {
+			border-color: var(--off-fg-color);
+		}
+		&:focus {
+			border-color: var(--primary-color);
+		}
+	}
+
+	textarea {
+		background-color: transparent;
+		color: inherit;
+		resize: none;
+		height: 100%;
+		padding-block: 1rem;
+
+		&::-webkit-scrollbar {
+			width: 0.33rem;
+		}
+
+		&::-webkit-scrollbar-track {
+			margin: 1rem;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--bg-color-hover);
+			border-radius: 1rem;
+			&:hover {
+				background: var(--bg-color-active);
+			}
+		}
+	}
+}
+
+.gender-switcher {
+	position: relative;
+	display: flex;
+	border: var(--thin-border);
+	border-radius: 10rem;
+	overflow: hidden;
+
+	> label {
+		transition: background-color 0.15s ease-in;
+		flex: 1;
+		padding-block: 0.5vh;
+		cursor: pointer;
+
+		&:last-of-type:has(input:checked) ~ span {
+			left: 50%;
+		}
+		> input {
+			appearance: none;
+		}
+		> span {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+		}
+
+		&:hover {
+			background-color: rgb(from var(--bg-color-hover) r g b / 0.5);
+		}
+	}
+	> span {
+		transition: left 0.15s ease;
+		position: absolute;
+		inset: 0;
+		width: 50%;
+		background-color: var(--bg-widget-color);
+		pointer-events: none;
+		z-index: -1;
+	}
+	&:has(input:focus-visible) {
+		border-color: var(--primary-color);
+	}
+}
+
+.images-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: min-content;
+	gap: 1rem;
+	height: 100%;
+
+	img,
+	button {
+		transition: all 0.3s ease-out;
+		cursor: pointer;
+		width: 100%;
+		aspect-ratio: 1;
+		border: 2px solid var(--bg-widget-color);
+		border-radius: 1rem;
+	}
+	.image-container {
+		position: relative;
+		img {
+			object-fit: cover;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+			width: 1.5rem;
+			aspect-ratio: 1;
+			border: 2px solid var(--bg-widget-color);
+			border-radius: 50%;
+			pointer-events: none;
+			transform: scale(0);
+		}
+
+		&[data-selected='true'] {
+			img {
+				border-color: var(--primary-color);
+			}
+			&::before {
+				transition: all 0.15s ease-out;
+				border: 0.75rem solid var(--primary-color);
+				transform: scale(1);
+			}
+		}
+
+		&:hover {
+			&::before {
+				transform: scale(1);
+			}
+		}
+	}
+	button > svg {
+		width: 50%;
+		&.loader {
+			animation: rotate 1s linear infinite;
+		}
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}

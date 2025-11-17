@@ -1,0 +1,89 @@
+.selected-node > use {
+	stroke-width: 4 !important;
+	stroke: var(--primary-color) !important;
+}
+
+.path {
+	stroke: var(--grey-600);
+	stroke-linejoin: round;
+	fill: none;
+	opacity: 0.2;
+
+	&:hover + circle {
+		offset-path: url(#n-path:hover);
+		animation: moveCircle 1s 20ms ease-out infinite;
+	}
+}
+
+@keyframes moveCircle {
+	75% {
+		fill: yellow;
+	}
+	to {
+		fill: transparent;
+		offset-distance: 100%;
+	}
+}
+
+.path-animate {
+	stroke-dasharray: 15;
+	animation: move 3s linear infinite;
+}
+
+@keyframes move {
+	to {
+		stroke-dashoffset: -60;
+	}
+}
+
+.lineage-path {
+	stroke: lime;
+}
+
+.spouse-path {
+	stroke: #fc084d;
+	opacity: 0.4;
+}
+
+.ex-spouse-path {
+	stroke: dimgrey;
+	opacity: 0.5;
+	stroke-dasharray: 30;
+	animation-duration: 6s;
+}
+
+.connected-user-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+	border: 1px solid var(--bg-color-active);
+	border-radius: 0.25rem;
+
+	> svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:disabled {
+		pointer-events: none;
+	}
+
+	&:not(:disabled) {
+		&:hover {
+			background-color: var(--bg-color-active);
+		}
+	}
+}
+
+.loader {
+	animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}

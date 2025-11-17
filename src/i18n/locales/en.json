@@ -1,0 +1,358 @@
+{
+	"general": {
+		"close": "Close",
+		"cancel": "Cancel",
+		"loading": "Loading...",
+		"create": "Create",
+		"join": "Join"
+	},
+	"home": {
+		"title": "Your Intelligent Builder for Interactive Family Tree",
+		"description": "Map your roots, discover your legacy, and see how you're part of a much bigger picture",
+		"go": "Go To Tree",
+		"create": "Create New Tree",
+		"join": "Join To Tree",
+		"connect": "Connect Your Tree",
+		"join-title": "Join to already created tree",
+		"connect-title": "Union your tree with another one",
+		"tour": {
+			"getting-started": "Getting Started",
+			"adding-members": "Adding Members",
+			"adding-users": "Adding Users",
+			"customization": "Customization",
+			"export-tree": "Export Tree"
+		}
+	},
+	"features": {
+		"title": "Features",
+		"description": "Uncover the full of advantages that KinGrid offers with its robust and feature-rich platform",
+		"effortless-building": {
+			"title": "Effortless Building",
+			"description": "Forget complex charts and tedious data entry. KinGrid's intuitive tools make building your family tree surprisingly simple and deeply rewarding"
+		},
+		"online-connection": {
+			"title": "Online Connection",
+			"description": "Your family story doesn't end with the relatives you know. With KinGrid's Global Family Network, you can find and connect with branches of your family tree you never knew existed, anywhere in the world"
+		},
+		"many-tools": {
+			"title": "Many Tools",
+			"description": "Building a family tree is just the beginning. KinGrid provides you with a full workshop of powerful, easy-to-use tools to research, enrich, and share your family's narrative. This isn't just charting names — it's about understanding lives"
+		},
+		"user-friendly-interface": {
+			"title": "User-Friendly Interface",
+			"description": "Designed for both beginners and professionals. KinGrid's intuitive interface simplifies traditional genealogy software, allowing you to focus on what truly matters: discovering your heritage and connecting with it"
+		}
+	},
+	"pricing": {
+		"title": "Pricing",
+		"description": "Explore our flexible subscription plans designed to meet your trading needs",
+		"toggle": {
+			"monthly": "Monthly",
+			"annually": "Annually",
+			"discount": "Safe -20%",
+			"monthly-billing": "Monthly billing",
+			"yearly-billing": "Yearly billing"
+		},
+		"card": {
+			"per-month": "per month",
+			"per-year": "per year"
+		}
+	},
+	"reviews": {
+		"title": "What Customer Says",
+		"description": "Discover the Voice of Satisfaction: Testimonials that Speak Volumes"
+	},
+	"partners": {
+		"title": "Over 100+ partners",
+		"description": "Expanding Horizons: Joining Forces with 100+ Trusted Partners Worldwide"
+	},
+	"auth-tree-modal": {
+		"create": "Create Your Tree",
+		"join": "Join To Tree",
+		"create-recomendation": "Give name and password to continue",
+		"join-recomendation": "Enter credentials to continue",
+		"name-field": {
+			"placeholder": "Tree name"
+		},
+		"password-field": {
+			"placeholder": "Password"
+		}
+	},
+	"header": {
+		"logo-link": {
+			"aria-label": "KinGrid homepage",
+			"title": "Go to the homepage"
+		},
+		"burger": {
+			"title": ["Open menu", "Close menu"]
+		},
+		"menu": {
+			"home": "Home",
+			"how-it-works": "How it Works",
+			"features": "Features",
+			"pricing": "Pricing",
+			"reviews": "Reviews",
+			"partners": "Partners"
+		}
+	},
+	"language-switcher": {
+		"title": ["Open language list", "Close language list"]
+	},
+	"switch": {
+		"aria-label": "Toggle switch"
+	},
+	"user": {
+		"avatar": "Avatar",
+		"basename": "User",
+		"avatar-button": {
+			"aria-label": "User navigation menu",
+			"title": "Open user menu"
+		},
+		"logout": "Log out",
+		"logout-loading": "Logging out...",
+		"login": "Log in",
+		"sign-up": "Sign up"
+	},
+	"footer": {
+		"social-title": "Stay connected with us on social media!",
+		"social-subtitle": "Join Us on Social Media for Updates, Promotions and Exclusive Content!",
+		"newsletter-title": "Exclusive Offers Await: Subscribe Now!",
+		"newsletter-subtitle": "Be the first to know about our latest deals, discounts, and special promotions by subscribing to our newsletter",
+		"social-links": {
+			"github": {
+				"aria-label": "Visit our GitHub repository",
+				"title": "Visit our GitHub repository (opens in new tab)"
+			},
+			"instagram": {
+				"aria-label": "Visit our Instagram page",
+				"title": "Visit our Instagram page (opens in new tab)"
+			},
+			"twitter": {
+				"aria-label": "Visit our Twitter page",
+				"title": "Visit our Twitter page (opens in new tab)"
+			}
+		},
+		"social-contacts": {
+			"phone": "Phone: ",
+			"phone-title": "Phone number",
+			"email": "Email: ",
+			"email-title": "Email address"
+		},
+		"newsletter-form": {
+			"aria-label": "Enter your email",
+			"button-title": "Send email"
+		}
+	},
+	"rights": {
+		"copyright": "© {{year}} KinGrid. All rights reserved",
+		"privacy-policy": "Privacy Policy",
+		"terms-of-service": "Terms of Service",
+		"cookie-policy": "Cookie Policy",
+		"disclaimer": "By continuing, you agree to our ",
+		"and": " and "
+	},
+	"auth": {
+		"tree-image-alt": "Tree image",
+		"heading": {
+			"title": {
+				"login": "Welcome back!",
+				"signup": "Create a new account"
+			},
+			"subtitle": {
+				"login": "Sign in to your account",
+				"signup": "Fill in the forms to continue"
+			}
+		},
+		"fields": {
+			"auth-id": {
+				"title": "Enter your email or phone or username",
+				"label": "Email / Phone / Username"
+			},
+			"password": {
+				"title": "Enter your password",
+				"label": "Password",
+				"eye-button-title": ["Show password", "Hide password"]
+			}
+		},
+		"submit": {
+			"login": "Login",
+			"signup": "Sign up"
+		},
+		"redirect-button": {
+			"signup": "Already have an account? ",
+			"login": "Don't have an account? ",
+			"title": {
+				"login": "Go to sign up",
+				"signup": "Go to login"
+			}
+		},
+
+		"verification": {
+			"title": {
+				"email": "Check your email",
+				"phone": "Check your phone"
+			},
+			"message": "We have sent a code to",
+			"not-received-code": "Didn't receive the code?",
+			"resend-title": {
+				"email": "Resend to your email",
+				"phone": "Resend to your phone"
+			},
+			"resend-code": "Resend code",
+			"resend-code-loading": "Resending...",
+			"code-field-title": "Enter your code"
+		}
+	},
+	"logout": {
+		"message": "Are you sure you want to log out? You'll need to sign in again to access your account",
+		"security-note": "Your data will be securely saved for your next login"
+	},
+	"tree": {
+		"token-join": {
+			"title": "Are you sure you want to join?",
+			"message": {
+				"0": "You're joining to the family",
+				"1": " It counts ",
+				"2": " users and ",
+				"3": " family members"
+			}
+		}
+	},
+	"flow": {
+		"panel": {
+			"open-title": "Open panel",
+			"close-title": "Close panel",
+			"tabs": {
+				"info": "Info",
+				"description": "Description",
+				"images": "Images"
+			},
+			"fields": {
+				"gender": "Gender",
+				"male": "Male",
+				"female": "Female",
+				"first-name": "First name",
+				"first-name-placeholder": "James",
+				"middle-name": "Middle name",
+				"middle-name-placeholder": "Alan",
+				"last-name": "Last name",
+				"last-name-placeholder": "Smith",
+				"birth-date": "Birth date",
+				"birth-place": "Birth place",
+				"birth-place-placeholder": "Washington, America",
+				"death-date": "Death date",
+				"description": "Description",
+				"description-placeholder": "Description of the family member"
+			},
+			"date-input": {
+				"day-aria-label": "Date (day, month, year)",
+				"time-aria-label": "Time (hours, minutes, seconds)"
+			},
+			"footer": {
+				"add-father": "Add father",
+				"add-mother": "Add mother",
+				"add-wife": "Add wife",
+				"add-ex-wife": "Add ex-wife",
+				"add-husband": "Add husband",
+				"add-ex-husband": "Add ex-husband",
+				"add-son": "Add son",
+				"add-daughter": "Add daughter",
+				"remove": "Remove",
+				"disconnect": "Disconnect"
+			},
+			"relations": {
+				"father": "father",
+				"mother": "mother",
+				"wife": "wife",
+				"ex-wife": "ex-wife",
+				"husband": "husband",
+				"ex-husband": "ex-husband",
+				"son": "son",
+				"daughter": "daughter"
+			},
+			"add": "Add",
+			"new": "new ",
+			"as": "as "
+		},
+		"node": {
+			"button": {
+				"title": {
+					"connect": "Connect to real user",
+					"connected": "Connected",
+					"connecting": "Connecting..."
+				}
+			}
+		},
+		"controls": {
+			"export": {
+				"aria-label": "Export tree as image (E)",
+				"title": "Export tree as image - Press: E"
+			},
+			"center": {
+				"aria-label": "Center tree view (C)",
+				"title": "Center tree view - Press: C"
+			},
+			"reset-zoom": {
+				"aria-label": "Reset tree zoom (R)",
+				"title": "Reset tree zoom - Press: R"
+			},
+			"scale": {
+				"aria-label": "Zoom controls",
+				"zoom-out": {
+					"aria-label": "Zoom out (–)",
+					"title": "Zoom out - Press: –"
+				},
+				"zoom-in": {
+					"aria-label": "Zoom in (+)",
+					"title": "Zoom in - Press: +"
+				},
+				"input": {
+					"aria-label": "Zoom level",
+					"title": "Set zoom in percents"
+				}
+			}
+		},
+		"invite-popup": {
+			"title": "Invitation Created Successfully!",
+			"message": "Share this invitation url with the person:",
+			"copy-button": "Copy to Clipboard"
+		},
+		"relations-of": {
+			"father": "Father of ",
+			"mother": "Mother of ",
+			"husband": "Husband of ",
+			"wife": "Wife of ",
+			"ex-husband": "Ex-husband of ",
+			"ex-wife": "Ex-wife of ",
+			"son": "Son of ",
+			"daughter": "Daughter of "
+		}
+	},
+	"toast": {
+		"error": {
+			"not-image-files": "{{count}} files aren't images, please select images only",
+			"over-size-files": "{{count}} files are over 5MB, please select files less than 5MB",
+			"failed-to-upload-images": [
+				"Failed to upload images, please try again later",
+				"Failed to upload 1 image, please try again later",
+				"Failed to upload {{count}} images, please try again later"
+			],
+			"failed-to-create-invitation": "Failed to create invitation, try again later",
+			"not-found-user": "User not found, try to sign up",
+			"rate-limit": "Too many requests, try again later",
+			"invalid-code": "Invalid code, try again",
+			"expired-code": "Expired code, try to get another one"
+		},
+		"success": {
+			"copied-to-clipboard": "Copied to clipboard!",
+			"login": "Successfully login!",
+			"signup": "Successfully sign up!",
+			"verified": "Successfully verified!",
+			"logout": "You have been logged out!"
+		},
+		"info": {
+			"confirm-email": "Confirm your email address!",
+			"code-resent": "Code resent. Please check your email!"
+		}
+	}
+}

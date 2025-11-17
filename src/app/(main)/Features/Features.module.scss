@@ -1,0 +1,55 @@
+@use '../../../styles/mixins' as *;
+
+.stack {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	gap: 1rem;
+	width: 100%;
+
+	@include screen-lg {
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		> div {
+			grid-area: unset;
+		}
+	}
+	@include screen-md-less {
+		display: flex;
+		flex-direction: column;
+	}
+
+	> div {
+		background-color: var(--bg-widget-color);
+		border-radius: 1rem;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		> div:has(> svg) {
+			width: fit-content;
+			padding: 1rem;
+			background-color: var(--primary-color);
+			color: var(--white);
+			border-radius: 50%;
+			display: flex;
+		}
+	}
+}
+
+.effortless-building {
+	grid-area: 2 / 1 / 4 / 2;
+}
+
+.online-connection {
+	grid-area: 1 / 2 / 3 / 3;
+}
+
+.many-tools {
+	grid-area: 3 / 2 / 5 / 3;
+}
+
+.user-friendly-interface {
+	grid-area: 2 / 3 / 4 / 4;
+}

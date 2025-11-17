@@ -1,0 +1,37 @@
+@use '../../styles/mixins' as *;
+
+.btn {
+	padding: 1rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.primary {
+	background-color: var(--off-fg-color);
+	color: var(--off-bg-color);
+	@include desktop {
+		&:hover {
+			background-color: var(--fg-color-hover);
+		}
+	}
+	&:active {
+		background-color: var(--fg-color-active);
+	}
+}
+
+.secondary {
+	background-color: var(--off-bg-color);
+	border: 1px solid var(--off-fg-color);
+	@include desktop {
+		&:hover {
+			background-color: var(--bg-color-hover);
+		}
+	}
+	&:active {
+		background-color: var(--bg-color-active);
+	}
+	&:focus-visible {
+		border-color: transparent;
+	}
+}

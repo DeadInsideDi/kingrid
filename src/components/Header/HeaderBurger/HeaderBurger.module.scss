@@ -1,0 +1,33 @@
+@use '../../../styles/mixins' as *;
+
+button.header-burger {
+	display: none;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	@include unselectable;
+	@include screen-md-less {
+		display: flex;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		transition: transform 0.2s var(--comic-bezier);
+		display: block;
+		width: 1.5rem;
+		min-height: 2px;
+		background-color: var(--off-fg-color);
+		border-radius: 2px;
+	}
+
+	&[aria-expanded='true'] {
+		&::before {
+			transform: translateY(0.3rem) rotate(45deg);
+		}
+
+		&::after {
+			transform: translateY(-0.3rem) rotate(-45deg);
+		}
+	}
+}

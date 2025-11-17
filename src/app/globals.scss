@@ -1,0 +1,142 @@
+@use '../styles/reset' as *;
+@use '../styles/mixins' as *;
+
+@mixin light-mode {
+	--bg-color: var(--white);
+	--fg-color: var(--black);
+	--bg-widget-color: var(--bg-color);
+}
+
+@mixin dark-mode {
+	--bg-color: var(--black);
+	--fg-color: var(--white);
+	--bg-widget-color: var(--bg-color-hover);
+}
+
+:root {
+	--comic-bezier: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--content-max-width: 1280px;
+	--header-height: 92px;
+
+	--black: black;
+	--white: white;
+
+	--off-bg-color: color-mix(in srgb, var(--bg-color) 95%, var(--fg-color));
+	--off-fg-color: color-mix(in srgb, var(--fg-color) 95%, var(--bg-color));
+
+	--grey-500: #9e9e9e;
+	--grey-600: #757575;
+	--grey-900: #212121;
+
+	--red-500: #f44336;
+	--red-A700: #d50000;
+	--blue-A400: #2979ff;
+
+	--primary-color: var(--blue-A400);
+
+	--splitting-border-color: color-mix(
+		in srgb,
+		var(--bg-color) 70%,
+		var(--fg-color)
+	);
+
+	--bg-color-hover: color-mix(in srgb, var(--bg-color) 85%, var(--fg-color));
+	--fg-color-hover: color-mix(in srgb, var(--fg-color) 85%, var(--bg-color));
+	--primary-color-hover: color-mix(
+		in srgb,
+		var(--primary-color) 85%,
+		var(--fg-color)
+	);
+
+	--bg-color-active: color-mix(in srgb, var(--bg-color) 80%, var(--fg-color));
+	--fg-color-active: color-mix(in srgb, var(--fg-color) 80%, var(--bg-color));
+	--primary-color-active: color-mix(
+		in srgb,
+		var(--primary-color) 80%,
+		var(--fg-color)
+	);
+
+	@include light-mode;
+}
+
+:root[data-theme='dark'] {
+	@include dark-mode;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root[data-theme='system'] {
+		@include dark-mode;
+	}
+}
+
+html {
+	font-size: 20px; // supports 14~22px
+	scroll-padding-top: var(--header-height);
+	scroll-behavior: smooth;
+}
+
+body {
+	color: var(--off-fg-color);
+	background: var(--off-bg-color);
+	font-family: var(--font-roboto), sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+a,
+button {
+	@include focus-ring-outline;
+	cursor: pointer;
+}
+
+a,
+button,
+input {
+	transition: 0.15s ease;
+	border: none;
+	color: inherit;
+	background-color: transparent;
+}
+
+li > a {
+	@include undraggable;
+	color: var(--grey-600);
+
+	@include desktop {
+		&:hover {
+			color: inherit;
+		}
+	}
+	&:active {
+		color: inherit;
+	}
+}
+
+button,
+label,
+img,
+*::placeholder {
+	@include no-select-drag;
+}
+
+button {
+	@include focus-ring-outline;
+}
+
+*::-webkit-scrollbar-track {
+	cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb {
+	cursor: default;
+}
+
+.toaster > li {
+	background-color: var(--off-bg-color) !important;
+	color: var(--off-fg-color) !important;
+
+	::first-letter {
+		text-transform: capitalize;
+	}
+}

@@ -1,0 +1,63 @@
+@use '../../../../styles/mixins' as *;
+
+.login,
+.signup {
+	@include focus-ring-outline;
+	font-size: clamp(0.75rem, 1.5vw, 1rem);
+	padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+	padding-block: clamp(0.75rem, 1.5vw, 1rem);
+	position: relative;
+
+	&::before {
+		content: '';
+		transition: all 0.15s ease-in;
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background-color: var(--off-fg-color);
+		z-index: -1;
+	}
+
+	@include desktop {
+		&:hover::before {
+			background-color: var(--fg-color-hover);
+		}
+	}
+	&:active::before {
+		background-color: var(--fg-color-active);
+	}
+}
+
+.login::before {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+.signup {
+	color: var(--off-bg-color);
+}
+
+@mixin user-login-hover {
+	color: var(--off-bg-color);
+	&::before {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	& + .signup {
+		color: var(--off-fg-color);
+		&::before {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+	}
+}
+
+@include desktop {
+	.login:hover {
+		@include user-login-hover;
+	}
+}
+.login:active,
+.login:focus-visible {
+	@include user-login-hover;
+}

@@ -1,0 +1,37 @@
+.ripple-button {
+	position: relative;
+	overflow: hidden;
+	transition: background-color 0.25s 50ms ease-out;
+	z-index: 1;
+
+	&:not(:disabled) {
+		&:hover {
+			background-color: var(--bg-color-hover) !important;
+		}
+		&:active {
+			background-color: var(--bg-color-active) !important;
+		}
+	}
+}
+
+.ripple-button-circle {
+	position: absolute;
+	background-color: var(--bg-color-active);
+	border-radius: 50%;
+	animation: touch 0.3s ease-out forwards;
+	pointer-events: none;
+	z-index: -1;
+}
+
+@keyframes touch {
+	from {
+		width: 0px;
+		height: 0px;
+	}
+	to {
+		width: 300%;
+		height: 300%;
+		opacity: 0.25;
+		margin: -150%;
+	}
+}

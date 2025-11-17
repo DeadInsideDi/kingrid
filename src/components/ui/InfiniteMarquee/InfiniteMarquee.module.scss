@@ -1,0 +1,17 @@
+.infinite-marquee {
+	margin-top: 4rem;
+	display: flex;
+	width: 100%;
+}
+
+.group {
+	display: flex;
+	animation: spin 20s linear infinite;
+	will-change: transform;
+}
+
+@keyframes spin {
+	to {
+		transform: translateX(-100%);
+	}
+}

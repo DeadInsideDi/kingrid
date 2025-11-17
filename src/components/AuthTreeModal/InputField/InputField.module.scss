@@ -1,0 +1,36 @@
+@use '../../../styles/mixins' as *;
+
+.input-field {
+	transition: 0.15s ease-out;
+	position: relative;
+	width: 100%;
+	background-color: var(--bg-widget-color);
+	border: 1px solid var(--splitting-border-color);
+
+	@include desktop {
+		&:has(input:hover) {
+			border-color: var(--off-fg-color);
+		}
+	}
+	&:has(input:focus) {
+		border-color: var(--primary-color);
+		> svg {
+			color: var(--primary-color);
+		}
+	}
+
+	> input {
+		border-radius: inherit;
+		padding-inline: 3rem 1rem;
+		width: inherit;
+		height: 3rem;
+	}
+
+	> svg {
+		position: absolute;
+		left: 1rem;
+		transition: inherit;
+		pointer-events: none;
+		align-self: center;
+	}
+}
