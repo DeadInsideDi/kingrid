@@ -22,7 +22,8 @@
 		}
 
 		> button {
-			background-color: rgb(from var(--fg-color) r g b / 0.1);
+			background-color: rgb(from var(--white) r g b / 0.2);
+			color: var(--white);
 			border-radius: 50%;
 			height: 3rem;
 			aspect-ratio: 1;
@@ -37,10 +38,10 @@
 			}
 
 			&:hover {
-				background-color: rgb(from var(--fg-color) r g b / 0.2);
+				background-color: rgb(from var(--white) r g b / 0.3);
 			}
 			&:active {
-				background-color: rgb(from var(--fg-color) r g b / 0.3);
+				background-color: rgb(from var(--white) r g b / 0.4);
 			}
 		}
 	}
