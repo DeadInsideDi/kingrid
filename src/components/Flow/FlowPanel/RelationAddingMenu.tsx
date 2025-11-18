@@ -30,6 +30,7 @@ export const RelationSuggester: FC = () => {
 		() => setRelationAddingMenu('none'),
 		[selectedMemberId, setRelationAddingMenu],
 	)
+
 	useEffect(() => {
 		if (relationAddingMenu === 'none') return setCheckedValue('')
 		const rel = relationAddingMenu.slice(relationAddingMenu.indexOf('-') + 1)
@@ -142,17 +143,20 @@ export const RelationSuggester: FC = () => {
 				<button onClick={close}>{t('general.cancel')}</button>
 				<button
 					onClick={async () => {
+						console.log('clicked')
 						if (!member) return
+						console.log('member', member)
 
 						const addRelation = addRelationByType[relationAddingMenu]
 						const isNew = checkedValue === 'new'
-
+						console.log('addRelation', addRelation, 'isNew', isNew)
 						const newMemberId = await addRelation({
 							fromMember: member,
 							memberId: checkedValue,
 							isNew,
 							t,
 						})
+						console.log('newMemberId', newMemberId)
 
 						if (newMemberId) {
 							mutate({
