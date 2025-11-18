@@ -13,7 +13,6 @@ import type {
 import type { TypeId } from '@/types/root.types'
 import { useQueryClient } from '@tanstack/react-query'
 import { LoaderCircle, Plus } from 'lucide-react'
-import Image from 'next/image'
 import { useEffect, useRef, useState, type FC } from 'react'
 import { toast } from 'sonner'
 import { PanelItem } from '../PanelItem/PanelItem'
@@ -314,7 +313,7 @@ const PanelContentImages: FC<PanelItemProps> = ({ member }) => {
 						})
 					}
 				>
-					<Image
+					<img
 						src={url}
 						alt=''
 					/>
