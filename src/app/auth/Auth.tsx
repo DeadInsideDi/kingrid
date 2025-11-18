@@ -52,6 +52,9 @@ export const Auth: FC = () => {
 			<Image
 				src='/tree-1.png'
 				alt={t('auth.tree-image-alt')}
+				width={0}
+				height={0}
+				sizes='100vw'
 			/>
 		</div>
 	)
