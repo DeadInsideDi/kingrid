@@ -25,6 +25,7 @@ export const RelationSuggester: FC = () => {
 	const { mutate } = useAddMemberToFamily()
 
 	const { t } = useLocalization()
+	const startedText = t(`flow.relations-of.${relation}` as TranslationKey)
 
 	useEffect(
 		() => setRelationAddingMenu('none'),
@@ -143,20 +144,17 @@ export const RelationSuggester: FC = () => {
 				<button onClick={close}>{t('general.cancel')}</button>
 				<button
 					onClick={async () => {
-						console.log('clicked')
 						if (!member) return
-						console.log('member', member)
 
 						const addRelation = addRelationByType[relationAddingMenu]
 						const isNew = checkedValue === 'new'
-						console.log('addRelation', addRelation, 'isNew', isNew)
+
 						const newMemberId = await addRelation({
 							fromMember: member,
 							memberId: checkedValue,
 							isNew,
-							t,
+							startedText,
 						})
-						console.log('newMemberId', newMemberId)
 
 						if (newMemberId) {
 							mutate({

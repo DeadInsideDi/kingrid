@@ -1,4 +1,3 @@
-import type { Localization } from '@/i18n/hooks/useLocalization'
 import { familyMemberService } from '@/services/family-member.service'
 import { relationsService } from '@/services/relations.service'
 import type { RelationAddingMenuType } from '@/store/flow.store'
@@ -8,19 +7,19 @@ export type AddRelationOptions = {
 	fromMember: FamilyMemberResponse
 	memberId?: string
 	isNew?: boolean
-	t: Localization['t']
+	startedText: string
 }
 
 export const addFather = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.father') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'MALE',
 			})
@@ -35,12 +34,12 @@ export const addMother = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.mother') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'FEMALE',
 			})
@@ -55,12 +54,12 @@ export const addHusband = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.husband') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'MALE',
 			})
@@ -75,12 +74,12 @@ export const addWife = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.wife') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'FEMALE',
 			})
@@ -95,12 +94,12 @@ export const addExHusband = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.ex-husband') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'MALE',
 			})
@@ -115,12 +114,12 @@ export const addExWife = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.ex-wife') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'FEMALE',
 			})
@@ -135,12 +134,12 @@ export const addSon = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.son') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'MALE',
 			})
@@ -155,12 +154,12 @@ export const addDaughter = async ({
 	fromMember,
 	memberId,
 	isNew,
-	t,
+	startedText,
 }: AddRelationOptions) => {
 	if (isNew) {
 		memberId = await familyMemberService
 			.createMember({
-				firstName: t('flow.relations-of.daughter') + fromMember.firstName,
+				firstName: startedText + fromMember.firstName,
 				lastName: fromMember.lastName,
 				gender: 'FEMALE',
 			})
