@@ -7,7 +7,7 @@ export const getAccessToken = () => {
 }
 
 export const saveTokenStorage = (accessToken: string) => {
-	Cookies.set(COOKEI.ACCESS_TOKEN, accessToken, COOKEI.COOKIE_OPTIONS)
+	Cookies.set(COOKEI.ACCESS_TOKEN, accessToken)
 }
 
 export const removeTokenStorage = () => {
